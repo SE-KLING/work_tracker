@@ -1,3 +1,4 @@
+from functools import partial
 from uuid import uuid4
 
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -6,6 +7,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from model_utils.fields import AutoCreatedField, AutoLastModifiedField
+
+AmountField = partial(models.DecimalField, max_digits=8, decimal_places=2)
 
 
 class TimeStampedModel(models.Model):
@@ -21,7 +24,7 @@ class TimeStampedModel(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, email, password):
         if email is None:
             raise TypeError("Users must have an email address.")
         user = self.model(email=self.normalize_email(email))
@@ -81,6 +84,7 @@ class User(AbstractEmailUser, TimeStampedModel):
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     deactivated_at = models.DateTimeField(blank=True, null=True)
+    rate = AmountField(verbose_name="Hourly Rate", blank=True, null=True, db_index=True)
 
     def save(self, **kwargs):
         self.name = " ".join(map(str, [self.first_name, self.last_name])).strip()

@@ -10,7 +10,7 @@ class UserAdminChangeForm(admin_forms.UserChangeForm):
     class Meta(admin_forms.UserChangeForm.Meta):
         model = User
         fields = "__all__"
-        field_classes = {"username": EmailField}
+        field_classes = {"email": EmailField}
 
 
 class UserAdminCreationForm(admin_forms.UserCreationForm):
