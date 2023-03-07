@@ -14,7 +14,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     last_name = serializers.CharField(max_length=50)
     rate = serializers.DecimalField(max_digits=8, decimal_places=2, min_value=0)
     token = serializers.SerializerMethodField()
-    password = PasswordField(write_only=True, style={"input_type": "password"})
+    password = PasswordField(style={"input_type": "password"})
 
     class Meta:
         model = User
@@ -49,3 +49,13 @@ class RegistrationSerializer(serializers.ModelSerializer):
                 token = RefreshToken.for_user(obj)
                 return str(token.access_token)
         return None
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    current_password = PasswordField(style={"input_type": "password"})
+    new_password = PasswordField(style={"input_type": "password"})
+
+    def validate(self, attrs):
+        if attrs["current_password"] == attrs["new_password"]:
+            raise serializers.ValidationError("New password matches current password.")
+        return attrs

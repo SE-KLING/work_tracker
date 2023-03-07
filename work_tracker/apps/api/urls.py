@@ -7,19 +7,20 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-from work_tracker.apps.users.api.views import RegisterView
+from work_tracker.apps.tracker.api.views import EntryViewSet
+from work_tracker.apps.users.api.views import PasswordChangeView, RegisterView
 
 if settings.DEBUG:
     router = DefaultRouter()
 else:
     router = SimpleRouter()
 
-# router.register("user/register/", RegisterView)
+router.register("entry", EntryViewSet, basename="entry")
 
 
 app_name = "api"
 urlpatterns = [
-    # API AUTH TOKENS
+    # AUTH ENDPOINTS
     path("user/auth-token/", TokenObtainPairView.as_view(), name="auth-token"),
     path(
         "user/auth-token/refresh/",
@@ -29,6 +30,8 @@ urlpatterns = [
     path(
         "user/auth-token/verify/", TokenVerifyView.as_view(), name="auth-token-refresh"
     ),
+    # USER ENDPOINTS
     path("user/register/", RegisterView.as_view(), name="user-register"),
+    path("user/update-password/", PasswordChangeView.as_view(), name="password-change"),
     path("", include(router.urls)),
 ]
