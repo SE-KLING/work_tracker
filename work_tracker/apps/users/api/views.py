@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -7,8 +6,6 @@ from rest_framework.throttling import UserRateThrottle
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from .serializers import ChangePasswordSerializer, RegistrationSerializer
-
-User = get_user_model()
 
 
 class RegistrationThrottle(UserRateThrottle):
@@ -23,7 +20,8 @@ class RegisterView(CreateAPIView):
 
     serializer_class = RegistrationSerializer
     throttle_classes = [RegistrationThrottle]
-    authentication_classes = []
+    authentication_classes = ()
+    permission_classes = ()
 
 
 class PasswordChangeView(UpdateAPIView):

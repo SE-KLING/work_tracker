@@ -1,20 +1,18 @@
-from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from work_tracker.apps.api.fields import PasswordField
-
-User = get_user_model()
+from work_tracker.apps.users.models import User
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(read_only=True)
     email = serializers.EmailField(max_length=255)
+    password = PasswordField(style={"input_type": "password"})
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
     rate = serializers.DecimalField(max_digits=8, decimal_places=2, min_value=0)
     token = serializers.SerializerMethodField()
-    password = PasswordField(style={"input_type": "password"})
 
     class Meta:
         model = User
@@ -26,7 +24,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         try:
             user = User.objects.get(email__iexact=email)
             raise serializers.ValidationError(
-                "A User with that email address already exists."
+                {"email": "A User with that email address already exists."}
             )
         except User.DoesNotExist:
             pass
@@ -57,5 +55,7 @@ class ChangePasswordSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         if attrs["current_password"] == attrs["new_password"]:
-            raise serializers.ValidationError("New password matches current password.")
+            raise serializers.ValidationError(
+                {"new_password":  "New password matches current password."}
+            )
         return attrs

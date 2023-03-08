@@ -14,50 +14,21 @@ class UserAdmin(auth_admin.UserAdmin):
     fieldsets = (
         (None, {"fields": ("email", "password")}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "rate")}),
-        (
-            _("Permissions"),
-            {
-                "fields": (
-                    "is_active",
-                    "is_staff",
-                    "is_superuser",
-                    "groups",
-                    "user_permissions",
-                )
-            },
-        ),
+        (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
         (_("Important dates"), {"fields": ("last_login",)}),
     )
     add_fieldsets = (
         (None, {"fields": ("email", "password1", "password2")}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "rate")}),
-        (
-            _("Permissions"),
-            {
-                "fields": (
-                    "is_active",
-                    "is_staff",
-                    "is_superuser",
-                    "groups",
-                    "user_permissions",
-                )
-            },
-        ),
+        (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
     )
-    list_display = (
-        "email",
-        "name",
-        "rate",
-        "created_at",
-        "is_active",
-        "deactivated_at",
-        "is_superuser",
-    )
+    list_display = ("email", "name", "rate", "created_at", "is_active", "deactivated_at", "is_superuser")
     list_filter = ("is_active", "is_superuser")
     ordering = ("email",)
-    search_fields = ["name", "email"]
+    search_fields = ("name", "email")
 
     def delete_model(self, request, obj):
+        # Instead of deleting user from DB, perform soft delete
         obj.deactivated_at = timezone.now()
         obj.is_active = False
         obj.save()

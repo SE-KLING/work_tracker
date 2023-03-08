@@ -28,21 +28,13 @@ class UserAdminChangeForm(admin_forms.UserChangeForm):
 
 
 class UserAdminCreateForm(admin_forms.UserCreationForm):
-    password1 = forms.CharField(
-        label=_("Password"),
-        strip=False,
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
-    )
-    password2 = forms.CharField(
-        label=_("Password confirmation"),
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
-        strip=False,
-    )
+    password1 = forms.CharField(label=_("Password"), widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+                                strip=False)
+    password2 = forms.CharField(label=_("Password confirmation"), strip=False,
+                                widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}))
     first_name = forms.CharField(max_length=50)
     last_name = forms.CharField(max_length=50)
-    rate = forms.DecimalField(
-        label=_("Hourly Rate (€)"), min_value=0, decimal_places=2, required=False
-    )
+    rate = forms.DecimalField(label=_("Hourly Rate (€)"), min_value=0, decimal_places=2, required=False)
 
     def clean(self):
         cd = self.cleaned_data

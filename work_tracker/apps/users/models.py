@@ -14,7 +14,6 @@ class TimeStampedModel(models.Model):
     """
     Abstract model which auto-tracks when Model instances are created and updated.
     """
-
     created_at = AutoCreatedField()
     modified_at = AutoLastModifiedField()
 
@@ -45,21 +44,12 @@ class AbstractEmailUser(AbstractBaseUser, PermissionsMixin):
     """
     Abstract model enforcing 'email' as User's main username field for authentication.
     """
-
     email = models.EmailField(_("email address"), max_length=255, unique=True)
-    is_staff = models.BooleanField(
-        _("staff status"),
-        default=False,
-        help_text=_("Designates whether the user can log into this admin site."),
-    )
-    is_active = models.BooleanField(
-        _("active"),
-        default=True,
-        help_text=_(
-            "Designates whether this user should be treated as active. "
-            "Deselect this instead of deleting accounts."
-        ),
-    )
+    is_staff = models.BooleanField(_("staff status"), default=False,
+                                   help_text=_("Designates whether the user can log into this admin site."))
+    is_active = models.BooleanField(_("active"), default=True,
+                                    help_text=_("Designates whether this user should be treated as active. "
+                                                "Deselect this instead of deleting accounts."))
 
     objects = UserManager()
 
@@ -68,16 +58,13 @@ class AbstractEmailUser(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         abstract = True
-        ordering = [
-            "email",
-        ]
+        ordering = ("email", )
 
 
 class User(AbstractEmailUser, TimeStampedModel):
     """
     Custom User model allowing for greater customisation whilst still allowing for Django's built-in User functionality.
     """
-
     id = models.UUIDField(primary_key=True, default=uuid4)
     name = models.CharField(max_length=100, blank=True)
     first_name = models.CharField(max_length=50, blank=True)
