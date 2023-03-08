@@ -1,8 +1,7 @@
 class ActionSerializerMixin:
     """
-    Support to configure a Serializer Class per 'action'
+    Support to configure a Serializer Class per 'action' received.
     """
-
     action_serializers = {}
     action_meta = ("create", "update", "list")
 

@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
-from requests import Response
 from rest_framework import status
 from rest_framework.decorators import action
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from work_tracker.apps.api.mixins import ActionSerializerMixin
@@ -21,11 +21,7 @@ class EntryViewSet(ActionSerializerMixin, ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        # Filter for Entry instances pertaining to the projects the request User is involved in.
-        project_pks = list(user.projects.values_list("pk", flat=True))
-        return Entry.objects.filter(task__project__pk__in=project_pks).order_by(
-            "created_at", "status"
-        )
+        return Entry.objects.select_related('task').filter(task__user=user).order_by("created_at", "status")
 
     def get_object(self):
         entry = get_object_or_404(Entry, pk=self.kwargs.get("pk", ""))
@@ -33,7 +29,11 @@ class EntryViewSet(ActionSerializerMixin, ModelViewSet):
 
     @action(methods=["POST"], detail=False)
     def manualentry(self, request, *args, **kwargs):
+        """
+        Endpoint for creation of Manual time entries, where user can specify start and end time of an entry.
+        """
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

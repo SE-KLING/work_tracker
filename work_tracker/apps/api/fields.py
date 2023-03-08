@@ -4,31 +4,40 @@ from rest_framework.exceptions import ValidationError
 
 class PasswordValidator:
     """
-    Verify that a user does not attempt to set a password which matches their email address
+    Validator which validates that an entered password:
+
+    - Is not equivalent to the requesting User's email address.
+    - Contains the minimum required characters specified
+    - Is not purely numeric.
     """
 
-    def __init__(self, min_length: str = 8):
+    def __init__(self, email: str = None, min_length: int = 8):
         self.email = None
         self.min_length = min_length
 
     def set_context(self, field):
-        self.email = field.parent.initial_data.get(
-            "email", field.context["request"].user.email
-        ).lower()
+        self.email = field.parent.initial_data.get("email", field.context["request"].user.email).lower()
 
     def __call__(self, value):
+        # Assert that password is not equal to requesting User's email address.
         if value.lower() == self.email:
             raise ValidationError("Your password may not be the same as your email.")
+        # Assert that password contains minimum required characters.
         elif len(value) < self.min_length:
             raise ValidationError(
                 f"Your password is too short. It must contain at least "
                 f"{self.min_length} characters."
             )
+        # Assert that password is not purely numeric.
         elif value.isdigit():
             raise ValidationError("Your password may not be entirely numeric.")
 
 
 class PasswordField(serializers.CharField):
+    """
+    Custom password field that is validated using the PasswordValidator() class.
+    """
+
     def __init__(self, **kwargs):
         kwargs["write_only"] = True
         kwargs["validators"] = [PasswordValidator()]
@@ -36,19 +45,15 @@ class PasswordField(serializers.CharField):
 
 
 class EnumField(serializers.ChoiceField):
+    """
+    Custom Enum Serializer field to be used with the 'django-enumfields' library to easily serialize and display enum
+    choices and selections.
+    """
     NAME_FIELDS = {"name", "label"}
     VALUE_FIELDS = {"name", "value"}
     ALL_FIELDS = NAME_FIELDS.union(VALUE_FIELDS)
 
-    def __init__(
-        self,
-        enum,
-        name_field="label",
-        value_field="name",
-        fields=None,
-        choices=None,
-        **kwargs,
-    ):
+    def __init__(self, enum, name_field: str = "label", value_field: str = "name", fields=None, choices=None, **kwargs):
         if name_field not in self.NAME_FIELDS:
             raise ValueError(f'Invalid "name_field" arg: {name_field}')
         if value_field not in self.VALUE_FIELDS:
@@ -95,8 +100,7 @@ class EnumField(serializers.ChoiceField):
                 # Get enum by searching for "value_field"
                 # Only required when using "name" for "value_field"
                 return next(
-                    e
-                    for e in self.enum_choices
+                    e for e in self.enum_choices
                     if getattr(e, self.value_field) == input_data
                 )
         except (AttributeError, KeyError, ValueError, StopIteration):

@@ -23,9 +23,7 @@ class Company(TimeStampedModel):
 class Project(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
     users = models.ManyToManyField(User, related_name="projects")
-    company = models.ForeignKey(
-        Company, related_name="projects", on_delete=models.CASCADE, db_index=True
-    )
+    company = models.ForeignKey(Company, related_name="projects", on_delete=models.CASCADE, db_index=True)
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
 
@@ -38,12 +36,8 @@ class Project(TimeStampedModel):
 
 class Task(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
-    user = models.ForeignKey(
-        User, related_name="entries", on_delete=models.PROTECT, db_index=True
-    )
-    project = models.ForeignKey(
-        Project, related_name="tasks", on_delete=models.CASCADE, db_index=True
-    )
+    user = models.ForeignKey(User, related_name="entries", on_delete=models.PROTECT, db_index=True)
+    project = models.ForeignKey(Project, related_name="tasks", on_delete=models.CASCADE, db_index=True)
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=100)
     description = models.TextField(blank=True)
@@ -59,9 +53,7 @@ class Task(TimeStampedModel):
 
 class Entry(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
-    task = models.ForeignKey(
-        Task, related_name="entries", on_delete=models.CASCADE, db_index=True
-    )
+    task = models.ForeignKey(Task, related_name="entries", on_delete=models.CASCADE, db_index=True)
     comment = models.TextField(blank=True)
     start_time = models.DateTimeField()
     pause_time = models.DateTimeField(null=True)

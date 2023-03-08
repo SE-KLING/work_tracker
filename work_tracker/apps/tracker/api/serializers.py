@@ -1,62 +1,10 @@
-from datetime import datetime
-from decimal import Decimal
-
 from django.utils import timezone
 from rest_framework import serializers
 
 from work_tracker.apps.api.fields import EnumField
 from work_tracker.apps.tracker.enums import EntryAction, EntryStatus
 from work_tracker.apps.tracker.models import Entry
-
-
-def calculate_billables(
-    entry: Entry, start_time: datetime, end_time: datetime
-) -> Entry:
-    """
-    Calculate and update total_time, hours, bill of current Entry instance based off of specified
-    start_time and end_time.
-
-    Returns:
-        Entry: Updated Entry instance.
-    """
-    user = entry.task.user
-    total_time = (end_time - start_time).total_seconds()
-    hours = round(total_time / 3600, 6)
-    bill = round(Decimal(hours) * user.rate, 2)
-
-    # Update instance fields with calculated values.
-    entry.total_time += total_time
-    entry.hours += hours
-    entry.bill += bill
-    return entry
-
-
-class BaseEntrySerializer(serializers.ModelSerializer):
-    id = serializers.UUIDField()
-    task_id = serializers.UUIDField(source="task.id")
-    user = serializers.ReadOnlyField(source="task.user.email")
-    start_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
-    pause_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
-    end_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
-    status = EnumField(EntryStatus)
-    hours = serializers.DecimalField(max_digits=10, decimal_places=6)
-    bill = serializers.DecimalField(max_digits=8, decimal_places=2)
-
-    class Meta:
-        model = Entry
-        fields = (
-            "id",
-            "task_id",
-            "user",
-            "start_time",
-            "pause_time",
-            "end_time",
-            "status",
-            "total_time",
-            "hours",
-            "bill",
-        )
-        read_only_fields = fields
+from work_tracker.apps.utils import calculate_billables
 
 
 class EntryListSerializer(serializers.ModelSerializer):
@@ -72,28 +20,19 @@ class EntryListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Entry
-        fields = (
-            "id",
-            "task_id",
-            "user",
-            "start_time",
-            "pause_time",
-            "end_time",
-            "status",
-            "total_time",
-            "hours",
-            "bill",
-        )
+        fields = ("id", "task_id", "user", "start_time", "pause_time", "end_time", "status", "total_time", "hours",
+                  "bill")
+
+
+class EntryDetailSerializer(EntryListSerializer):
+    pass
 
 
 class EntryCreateSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(read_only=True)
     task_id = serializers.UUIDField()
     start_time = serializers.DateTimeField()
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.user = self.context["request"].user
+    status = EnumField(EntryStatus, read_only=True)
 
     #     project_pks = list(user.projects.values_list('pk', flat=True))
     #     tasks_qs = Task.objects.select_related('project').filter(project__pk__in=project_pks)
@@ -109,7 +48,8 @@ class EntryCreateSerializer(serializers.ModelSerializer):
         return value
 
     def validate_task_id(self, value):
-        user_tasks = self.user.entries.values_list("id", flat=True)
+        user = self.context['request'].user
+        user_tasks = user.entries.values_list("id", flat=True)
         if value not in user_tasks:
             raise serializers.ValidationError(
                 "The selected task has not been assigned to you."
@@ -124,8 +64,8 @@ class EntryCreateSerializer(serializers.ModelSerializer):
 class EntryUpdateSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(read_only=True)
     task_id = serializers.UUIDField(read_only=True)
-    action = EnumField(EntryAction)
-    entry_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    action = EnumField(EntryAction, write_only=True)
+    entry_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", write_only=True)
     total_time = serializers.IntegerField(read_only=True)
     hours = serializers.DecimalField(max_digits=10, decimal_places=6, read_only=True)
 
@@ -133,18 +73,18 @@ class EntryUpdateSerializer(serializers.ModelSerializer):
         super().__init__(instance=instance, data=data, **kwargs)
         self.user = self.context["request"].user
         if instance.status == EntryStatus.COMPLETE:
-            raise serializers.ValidationError(
-                "You cannot edit an already completed entry."
-            )
+            raise serializers.ValidationError("You cannot edit an already completed entry.")
         self.entry = instance
 
     def validate(self, attrs):
         action = attrs["action"].name
         status = self.entry.status
+        # If an entry is either already paused or completed, a user should not be able to pause the entry again.
         if action == "PAUSE" and status != EntryStatus.ACTIVE:
             raise serializers.ValidationError(
                 "You cannot pause an entry that is not active."
             )
+        # If an entry is already active, a user should not be able to resume the entry again.
         elif action == "RESUME" and status != EntryStatus.PAUSED:
             raise serializers.ValidationError(
                 "You cannot resume an already active entry."
@@ -159,48 +99,36 @@ class EntryUpdateSerializer(serializers.ModelSerializer):
         return value
 
     def update(self, instance, validated_data):
+        """
+        The "EntryUpdate" View encompasses the functionality to pause, resume or complete an existing entry.
+        The applicable action ("RESUME", "PAUSE", "COMPLETE") is paused within the request payload and determines how
+        the entry instance will be updated.
+        """
         action = validated_data["action"]
         entry_time = validated_data["entry_time"]
         # If user is pausing current entry
-        if action == "PAUSE":
+        if action == EntryAction.PAUSE:
             instance.pause_time = entry_time
             instance.status = EntryStatus.PAUSED
             instance = calculate_billables(instance, instance.start_time, entry_time)
         # If user is resuming a paused entry
-        elif action == "UNPAUSE":
+        elif action == EntryAction.RESUME:
             instance.start_time = entry_time
             instance.pause_time = None
             instance.status = EntryStatus.ACTIVE
         # If user is completing an entry
         else:
+            # If entry is active and has not been paused, no calculations will need to be done.
+            if instance.status == EntryStatus.ACTIVE:
+                instance = calculate_billables(instance, instance.start_time, entry_time)
             instance.end_time = entry_time
             instance.status = EntryStatus.COMPLETE
-            instance = calculate_billables(instance, instance.start_time, entry_time)
         instance.save()
         return instance
 
     class Meta:
         model = Entry
-        fields = (
-            "id",
-            "task_id",
-            "action",
-            "entry_time",
-            "total_time",
-            "hours",
-            "bill",
-        )
-
-
-class EntryDetailSerializer(serializers.Serializer):
-    id = serializers.ReadOnlyField()
-    task_id = serializers.ReadOnlyField(source="task.id")
-    start_time = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
-    pause_time = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
-    end_time = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
-    status = EnumField(EntryStatus, read_only=True)
-    hours = serializers.DecimalField(max_digits=10, decimal_places=6, read_only=True)
-    bill = serializers.DecimalField(max_digits=8, decimal_places=2, read_only=True)
+        fields = ("id", "task_id", "action", "entry_time", "total_time", "hours", "bill")
 
 
 class EntryManualCreateSerializer(serializers.ModelSerializer):
@@ -208,13 +136,15 @@ class EntryManualCreateSerializer(serializers.ModelSerializer):
     task_id = serializers.UUIDField()
     start_time = serializers.DateTimeField()
     end_time = serializers.DateTimeField()
-    comment = serializers.CharField()
+    comment = serializers.CharField(required=False)
     status = EnumField(EntryStatus, read_only=True)
+    total_time = serializers.IntegerField(read_only=True)
     hours = serializers.DecimalField(max_digits=10, decimal_places=6, read_only=True)
     bill = serializers.DecimalField(max_digits=8, decimal_places=2, read_only=True)
 
     def validate_task_id(self, value):
-        user_tasks = self.user.entries.values_list("id", flat=True)
+        user = self.context['request'].user
+        user_tasks = user.entries.values_list("id", flat=True)
         if value not in user_tasks:
             raise serializers.ValidationError(
                 "The selected task has not been assigned to you."
@@ -222,29 +152,28 @@ class EntryManualCreateSerializer(serializers.ModelSerializer):
         return value
 
     def validate(self, attrs):
-        if attrs["end_time"] <= attrs["start_time"]:
+        now = timezone.now()
+        start = attrs["start_time"]
+        end = attrs["end_time"]
+        # Ensure user has not selected datetime beyond current time.
+        if start >= now or end > now:
             raise serializers.ValidationError(
-                "The selected end time must be greater than the selected start time."
+                "The selected start_time/end_time values may not exceed the current time."
+            )
+        # Ensure user has not selected a start_time greater than the end_time.
+        if start >= end:
+            raise serializers.ValidationError(
+                {"start_time": "An Entry's start time may not exceed its end time."}
             )
         return attrs
 
     def create(self, validated_data):
         entry = super().create(validated_data)
         updated_entry = calculate_billables(entry, entry.start_time, entry.end_time)
+        updated_entry.status = EntryStatus.COMPLETE
         updated_entry.save()
         return updated_entry
 
     class Meta:
         model = Entry
-        fields = (
-            "id",
-            "task_id",
-            "start_time",
-            "end_time",
-            "comment",
-            "status",
-            "total_time",
-            "hours",
-            "bill",
-        )
-        read_only_fields = ("id", "status", "total_time", "hours", "bill")
+        fields = ("id", "task_id", "start_time", "end_time", "comment", "status", "total_time", "hours", "bill")
