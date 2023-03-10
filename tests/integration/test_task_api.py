@@ -5,7 +5,7 @@ from rest_framework.test import APITestCase
 
 from tests import factories
 from tests.utils import JWTMixin
-from work_tracker.apps.tracker.enums import EntryStatus, TicketStatus, TicketType
+from work_tracker.apps.tracker.enums import EntryStatus, TaskStatus, TaskType
 from work_tracker.apps.tracker.models import Task
 
 
@@ -26,7 +26,7 @@ class TaskAPITestCase(APITestCase, JWTMixin):
             'project_id': self.project.pk.hex,
             'name': 'Collect mushrooms',
             'code': 'Mushroom',
-            'type': TicketType.FEATURE.name,
+            'type': TaskType.FEATURE.name,
             'description': "Wine pages towers denying Smeagol's only bites ancient fairer. "
                            "Protected able slay throttle Háma written unsavory stink bay ragged war gibbet. "
                            "Beasts Andros onto appears summoning sweeps six farewell tomorrow's stealth warned!"
@@ -78,7 +78,7 @@ class TaskAPITestCase(APITestCase, JWTMixin):
         task = Task.objects.get(pk=resp.data['id'])
         assert task.user == self.user
         assert task.project == self.project
-        assert task.status == TicketStatus.NEW
+        assert task.status == TaskStatus.NEW
 
     def test_task_create_validation(self):
         # Assert non-super/staff User may not create tasks
@@ -115,7 +115,7 @@ class TaskAPITestCase(APITestCase, JWTMixin):
         url = f'{self.base_url}{self.task.pk.hex}/'
         data = {
             'description': 'This has been updated.',
-            'status': TicketStatus.COMPLETED.name,
+            'status': TaskStatus.COMPLETED.name,
         }
         resp = client.put(url, data)
         assert resp.status_code == 200
@@ -128,7 +128,7 @@ class TaskAPITestCase(APITestCase, JWTMixin):
         url = f'{self.base_url}{self.task.pk.hex}/'
         data = {
             'description': 'This has been updated.',
-            'status': TicketStatus.COMPLETED.name,
+            'status': TaskStatus.COMPLETED.name,
         }
         resp = self.client.put(url, data)
         assert resp.status_code == 403

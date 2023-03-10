@@ -35,5 +35,5 @@ class UserSpecificEntries(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         user = request.user
-        has_permission = any([user.is_staff, user.is_superuser]) or obj.task in request.user.entries.all()
+        has_permission = any([user.is_staff, user.is_superuser]) or obj.task in request.user.tasks.all()
         return has_permission

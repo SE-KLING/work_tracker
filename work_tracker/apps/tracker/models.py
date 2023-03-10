@@ -3,13 +3,13 @@ from uuid import uuid4
 from django.db import models
 from enumfields import EnumIntegerField
 
-from work_tracker.apps.tracker.enums import EntryStatus, TicketStatus, TicketType
+from work_tracker.apps.tracker.enums import EntryStatus, TaskStatus, TaskType
 from work_tracker.apps.users.models import AmountField, TimeStampedModel, User
 
 
 class Company(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
 
     class Meta:
@@ -24,7 +24,7 @@ class Project(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
     users = models.ManyToManyField(User, related_name="projects")
     company = models.ForeignKey(Company, related_name="projects", on_delete=models.CASCADE, db_index=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
 
     class Meta:
@@ -36,13 +36,13 @@ class Project(TimeStampedModel):
 
 class Task(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid4)
-    user = models.ForeignKey(User, related_name="entries", on_delete=models.PROTECT, db_index=True)
+    user = models.ForeignKey(User, related_name="tasks", on_delete=models.PROTECT, db_index=True)
     project = models.ForeignKey(Project, related_name="tasks", on_delete=models.CASCADE, db_index=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=150)
     code = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    type = EnumIntegerField(TicketType, default=TicketType.FEATURE)
-    status = EnumIntegerField(TicketStatus, default=TicketStatus.NEW)
+    type = EnumIntegerField(TaskType, default=TaskType.FEATURE)
+    status = EnumIntegerField(TaskStatus, default=TaskStatus.NEW)
 
     class Meta:
         ordering = ("status",)

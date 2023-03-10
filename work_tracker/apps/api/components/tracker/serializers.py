@@ -2,7 +2,7 @@ from django.utils import timezone
 from rest_framework import serializers
 
 from work_tracker.apps.api.fields import EnumField
-from work_tracker.apps.tracker.enums import EntryAction, EntryStatus, TicketStatus, TicketType
+from work_tracker.apps.tracker.enums import EntryAction, EntryStatus, TaskStatus, TaskType
 from work_tracker.apps.tracker.models import Company, Entry, Project, Task
 from work_tracker.apps.users.models import User
 from work_tracker.apps.utils import calculate_billables
@@ -147,7 +147,7 @@ class EntryManualCreateSerializer(serializers.ModelSerializer):
 
     def validate_task_id(self, value):
         user = self.context['request'].user
-        user_tasks = user.entries.values_list("id", flat=True)
+        user_tasks = user.tasks.values_list("id", flat=True)
         if value not in user_tasks:
             raise serializers.ValidationError(
                 "The selected task has not been assigned to you."
@@ -199,8 +199,8 @@ class TaskListSerializer(serializers.ModelSerializer):
 
 class TaskDetailSerializer(TaskListSerializer):
     description = serializers.CharField(read_only=True)
-    type = EnumField(TicketType, read_only=True)
-    status = EnumField(TicketStatus, read_only=True)
+    type = EnumField(TaskType, read_only=True)
+    status = EnumField(TaskStatus, read_only=True)
     entries = EntryDetailSerializer(read_only=True, many=True)
 
     class Meta:
@@ -215,7 +215,7 @@ class TaskCreateSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     code = serializers.CharField()
     description = serializers.CharField()
-    type = EnumField(TicketType)
+    type = EnumField(TaskType)
 
     class Meta:
         model = Task
@@ -238,7 +238,7 @@ class TaskCreateSerializer(serializers.ModelSerializer):
 
 class TaskUpdateSerializer(TaskListSerializer):
     description = serializers.CharField(write_only=True)
-    status = EnumField(TicketStatus, write_only=True)
+    status = EnumField(TaskStatus, write_only=True)
 
     class Meta:
         model = Task

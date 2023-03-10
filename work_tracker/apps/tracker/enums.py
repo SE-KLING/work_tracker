@@ -1,7 +1,7 @@
 from enumfields import Enum
 
 
-class TicketType(Enum):
+class TaskType(Enum):
     FEATURE = 1
     BUG = 2
     DEV_OPS = 3
@@ -14,7 +14,7 @@ class TicketType(Enum):
         DEV_OPS = "Dev Ops"
 
 
-class TicketStatus(Enum):
+class TaskStatus(Enum):
     NEW = 1
     IN_PROGRESS = 2
     COMPLETED = 3
