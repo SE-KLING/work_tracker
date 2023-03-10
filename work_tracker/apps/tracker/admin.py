@@ -46,19 +46,9 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(models.Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ("id", "created_at", "user", "code", "name", "project", "type", "status", "short_description")
+    list_display = ("id", "created_at", "user", "code", "name", "project", "type", "status")
     search_fields = ("name", "user", "code")
     ordering = ("status",)
-
-    @staticmethod
-    def short_description(obj: models.Task) -> str:
-        """
-        Return the Task's description in a truncated form, to allow for better displaying in the admin site.
-
-        Returns:
-            str: Truncated Task description.
-        """
-        return truncatechars(obj.description, 100)
 
 
 @admin.register(models.Entry)
@@ -66,6 +56,10 @@ class EntryAdmin(admin.ModelAdmin):
     list_display = ("id", "created_at", "entry_user", "task", "hours", "bill", "comment")
     ordering = ("status",)
     form = EntryAdditionForm
+    fieldsets = (("Entry Details", {"fields": ("task", "start_time", "pause_time", "end_time")}),
+                 ("Billables", {"fields": ("total_time", "hours", "bill")}),
+                 ("Additional", {"fields": ("status", "comment")})
+                 )
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)

@@ -7,9 +7,15 @@ from work_tracker.apps.utils import calculate_billables
 
 
 class EntryAdditionForm(forms.ModelForm):
+    pause_time = forms.DateTimeField(required=False)
+    total_time = forms.IntegerField(required=False)
+    hours = forms.DecimalField(required=False)
+    bill = forms.DecimalField(required=False)
+    status = forms.ChoiceField(choices=[('', 'Select status')] + list(EntryStatus.choices()), required=False)
+
     class Meta:
         model = Entry
-        fields = ("task", "start_time", "end_time", "comment")
+        fields = ("task", "start_time", "pause_time", "end_time", "total_time", "hours", "bill", "status", "comment")
 
     def clean(self):
         cd = self.cleaned_data

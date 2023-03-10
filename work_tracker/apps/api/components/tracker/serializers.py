@@ -124,7 +124,10 @@ class EntryUpdateSerializer(serializers.ModelSerializer):
             # If entry is active and has not been paused, no calculations will need to be done.
             if instance.status == EntryStatus.ACTIVE:
                 instance = calculate_billables(instance, instance.start_time, entry_time)
-            instance.end_time = entry_time
+                instance.end_time = entry_time
+            # If completing an already paused entry, take pause_time as end_time.
+            else:
+                instance.end_time = instance.pause_time
             instance.status = EntryStatus.COMPLETE
         instance.save()
         return instance
