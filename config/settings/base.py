@@ -34,7 +34,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # URLS
 # ------------------------------------------------------------------------------
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "work_tracker.apps.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 
 # APPS

@@ -3,16 +3,18 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter, SimpleRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
-from work_tracker.apps.tracker.api.views import EntryViewSet
-from work_tracker.apps.users.api.views import PasswordChangeView, RegisterView
+from work_tracker.apps.api.components.tracker.views import CompanyViewSet, EntryViewSet, ProjectViewSet, TaskViewSet
+from work_tracker.apps.api.components.users.views import PasswordChangeView, RegisterView
 
 if settings.DEBUG:
     router = DefaultRouter()
 else:
     router = SimpleRouter()
 
-# ENTRY ENDPOINTS
 router.register("entry", EntryViewSet, basename="entry")
+router.register("company", CompanyViewSet, basename="company")
+router.register("project", ProjectViewSet, basename="project")
+router.register("task", TaskViewSet, basename="task")
 
 app_name = "api"
 urlpatterns = [
