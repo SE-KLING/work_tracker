@@ -1,1525 +1,1073 @@
 [
-  {
-    "model": "auth.permission",
-    "pk": 1,
-    "fields": {
-      "name": "Can add permission",
-      "content_type": 1,
-      "codename": "add_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 2,
-    "fields": {
-      "name": "Can change permission",
-      "content_type": 1,
-      "codename": "change_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 3,
-    "fields": {
-      "name": "Can delete permission",
-      "content_type": 1,
-      "codename": "delete_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 4,
-    "fields": {
-      "name": "Can view permission",
-      "content_type": 1,
-      "codename": "view_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 5,
-    "fields": {
-      "name": "Can add group",
-      "content_type": 2,
-      "codename": "add_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 6,
-    "fields": {
-      "name": "Can change group",
-      "content_type": 2,
-      "codename": "change_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 7,
-    "fields": {
-      "name": "Can delete group",
-      "content_type": 2,
-      "codename": "delete_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 8,
-    "fields": {
-      "name": "Can view group",
-      "content_type": 2,
-      "codename": "view_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 9,
-    "fields": {
-      "name": "Can add content type",
-      "content_type": 3,
-      "codename": "add_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 10,
-    "fields": {
-      "name": "Can change content type",
-      "content_type": 3,
-      "codename": "change_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 11,
-    "fields": {
-      "name": "Can delete content type",
-      "content_type": 3,
-      "codename": "delete_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 12,
-    "fields": {
-      "name": "Can view content type",
-      "content_type": 3,
-      "codename": "view_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 13,
-    "fields": {
-      "name": "Can add session",
-      "content_type": 4,
-      "codename": "add_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 14,
-    "fields": {
-      "name": "Can change session",
-      "content_type": 4,
-      "codename": "change_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 15,
-    "fields": {
-      "name": "Can delete session",
-      "content_type": 4,
-      "codename": "delete_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 16,
-    "fields": {
-      "name": "Can view session",
-      "content_type": 4,
-      "codename": "view_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 17,
-    "fields": {
-      "name": "Can add site",
-      "content_type": 5,
-      "codename": "add_site"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 18,
-    "fields": {
-      "name": "Can change site",
-      "content_type": 5,
-      "codename": "change_site"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 19,
-    "fields": {
-      "name": "Can delete site",
-      "content_type": 5,
-      "codename": "delete_site"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 20,
-    "fields": {
-      "name": "Can view site",
-      "content_type": 5,
-      "codename": "view_site"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 21,
-    "fields": {
-      "name": "Can add log entry",
-      "content_type": 6,
-      "codename": "add_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 22,
-    "fields": {
-      "name": "Can change log entry",
-      "content_type": 6,
-      "codename": "change_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 23,
-    "fields": {
-      "name": "Can delete log entry",
-      "content_type": 6,
-      "codename": "delete_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 24,
-    "fields": {
-      "name": "Can view log entry",
-      "content_type": 6,
-      "codename": "view_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 25,
-    "fields": {
-      "name": "Can add user",
-      "content_type": 7,
-      "codename": "add_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 26,
-    "fields": {
-      "name": "Can change user",
-      "content_type": 7,
-      "codename": "change_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 27,
-    "fields": {
-      "name": "Can delete user",
-      "content_type": 7,
-      "codename": "delete_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 28,
-    "fields": {
-      "name": "Can view user",
-      "content_type": 7,
-      "codename": "view_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 29,
-    "fields": {
-      "name": "Can add company",
-      "content_type": 8,
-      "codename": "add_company"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 30,
-    "fields": {
-      "name": "Can change company",
-      "content_type": 8,
-      "codename": "change_company"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 31,
-    "fields": {
-      "name": "Can delete company",
-      "content_type": 8,
-      "codename": "delete_company"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 32,
-    "fields": {
-      "name": "Can view company",
-      "content_type": 8,
-      "codename": "view_company"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-      "name": "Can add project",
-      "content_type": 9,
-      "codename": "add_project"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-      "name": "Can change project",
-      "content_type": 9,
-      "codename": "change_project"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-      "name": "Can delete project",
-      "content_type": 9,
-      "codename": "delete_project"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-      "name": "Can view project",
-      "content_type": 9,
-      "codename": "view_project"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-      "name": "Can add task",
-      "content_type": 10,
-      "codename": "add_task"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-      "name": "Can change task",
-      "content_type": 10,
-      "codename": "change_task"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-      "name": "Can delete task",
-      "content_type": 10,
-      "codename": "delete_task"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-      "name": "Can view task",
-      "content_type": 10,
-      "codename": "view_task"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 41,
-    "fields": {
-      "name": "Can add entry",
-      "content_type": 11,
-      "codename": "add_entry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 42,
-    "fields": {
-      "name": "Can change entry",
-      "content_type": 11,
-      "codename": "change_entry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 43,
-    "fields": {
-      "name": "Can delete entry",
-      "content_type": 11,
-      "codename": "delete_entry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 44,
-    "fields": {
-      "name": "Can view entry",
-      "content_type": 11,
-      "codename": "view_entry"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 1,
-    "fields": {
-      "app_label": "auth",
-      "model": "permission"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 2,
-    "fields": {
-      "app_label": "auth",
-      "model": "group"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 3,
-    "fields": {
-      "app_label": "contenttypes",
-      "model": "contenttype"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 4,
-    "fields": {
-      "app_label": "sessions",
-      "model": "session"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 5,
-    "fields": {
-      "app_label": "sites",
-      "model": "site"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 6,
-    "fields": {
-      "app_label": "admin",
-      "model": "logentry"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 7,
-    "fields": {
-      "app_label": "users",
-      "model": "user"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 8,
-    "fields": {
-      "app_label": "tracker",
-      "model": "company"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 9,
-    "fields": {
-      "app_label": "tracker",
-      "model": "project"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 10,
-    "fields": {
-      "app_label": "tracker",
-      "model": "task"
-    }
-  },
-  {
-    "model": "contenttypes.contenttype",
-    "pk": 11,
-    "fields": {
-      "app_label": "tracker",
-      "model": "entry"
-    }
-  },
-  {
+{
     "model": "sessions.session",
-    "pk": "ge2msk1u30itsd3h9gqc7n1stm8wwl0h",
+    "pk": "s76jsrfbpfis0ppysc5mzpqnx25nr4p3",
     "fields": {
-      "session_data": ".eJxVzDsOwjAQRdG9uCaW7fEnpqRnDdGMPUMCKJHyqRB7h0gpoH73vJfqcFv7blt47oaqzkpsDEAmNs6yaXyk1CBY01iwhQsDZmZ1-mWE5cHjbusdx9ukyzSu80B6T_SxLvo6VX5ejvbvoMel_2oviNbEGlr0jiBUF4RLBUcWRMBwylwkQwqAgWrKPlMbjLSRKdkk6v0B67BBaw:1paWqa:X1tpKVwSrRrZt_hBy4aoh65c9AkP5nrvhXOgRGqGdRY",
-      "expire_date": "2023-03-24T07:07:24.765Z"
+        "session_data": ".eJxVjDsOwyAQBe9CHSNgWQMp0-cM1i4LcT6yJX-qKHePLblImtfMzHurjtal79a5TN1d1FlFkZwjuAYMQ-Mx-oZatw23NhXrczCoTr8ZU36WYW_lQcNt1HkclunOelf0QWd9HaW8Lof7d9DT3G-1r0TWtIKRvGNAcVhLFnBsoVYwJaSSa4KAQMgSkk8c0dTYFg42VPX5AsYCQRs:1pbQ5k:0QFoy93nV5HlhbJYG4LyW4g2qm8JerG9ose-goLpr1I",
+        "expire_date": "2023-03-26T18:06:44.022Z"
     }
-  },
-  {
+},
+{
     "model": "sites.site",
-    "pk": 1,
     "fields": {
-      "domain": "example.com",
-      "name": "Work Tracker"
+        "domain": "example.com",
+        "name": "Work Tracker"
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "09fcdfe9-23b6-467f-b5de-d5ed92d85c34",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.614Z",
-      "modified_at": "2023-03-10T12:14:02.614Z",
-      "email": "pippin@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Peregrin Took",
-      "first_name": "Peregrin",
-      "last_name": "Took",
-      "deactivated_at": null,
-      "rate": "15.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.614Z",
+        "modified_at": "2023-03-10T12:14:02.614Z",
+        "email": "merry@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Meriadoc Brandybuck",
+        "first_name": "Meriadoc",
+        "last_name": "Brandybuck",
+        "deactivated_at": null,
+        "rate": "15.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "11ef0787-650a-4cfe-bfef-3000dc593540",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.616Z",
-      "modified_at": "2023-03-10T12:14:02.616Z",
-      "email": "legolas@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Legolas Greenleaf",
-      "first_name": "Legolas",
-      "last_name": "Greenleaf",
-      "deactivated_at": null,
-      "rate": "20.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.611Z",
+        "modified_at": "2023-03-10T12:14:02.611Z",
+        "email": "denethortheadmin@test.com",
+        "is_staff": true,
+        "is_active": true,
+        "name": "Denethor Steward",
+        "first_name": "Denethor",
+        "last_name": "Steward",
+        "deactivated_at": null,
+        "rate": null,
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "27706cc7-c1c7-4dfd-8244-5b8d8d0a6aa0",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.619Z",
-      "modified_at": "2023-03-10T12:14:02.619Z",
-      "email": "sauron@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Sauron Maiar",
-      "first_name": "Sauron",
-      "last_name": "Maiar",
-      "deactivated_at": null,
-      "rate": "30.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.617Z",
+        "modified_at": "2023-03-10T12:14:02.617Z",
+        "email": "witchking@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Witch King",
+        "first_name": "Witch",
+        "last_name": "King",
+        "deactivated_at": null,
+        "rate": "20.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "2c305b58-baad-492f-9c4a-c9f52b782ccf",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.612Z",
-      "modified_at": "2023-03-10T12:14:02.612Z",
-      "email": "frodo@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Frodo Baggins",
-      "first_name": "Frodo",
-      "last_name": "Baggins",
-      "deactivated_at": null,
-      "rate": "15.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.613Z",
+        "modified_at": "2023-03-10T12:14:02.613Z",
+        "email": "sam@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Samwise Gamgee",
+        "first_name": "Samwise",
+        "last_name": "Gamgee",
+        "deactivated_at": null,
+        "rate": "15.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "532de075-134a-4ac5-884d-dd49611d4f3d",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.614Z",
-      "modified_at": "2023-03-10T12:14:02.614Z",
-      "email": "merry@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Meriadoc Brandybuck",
-      "first_name": "Meriadoc",
-      "last_name": "Brandybuck",
-      "deactivated_at": null,
-      "rate": "15.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.618Z",
+        "modified_at": "2023-03-10T12:14:02.618Z",
+        "email": "saruman@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Saruman White",
+        "first_name": "Saruman",
+        "last_name": "White",
+        "deactivated_at": null,
+        "rate": "25.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "54fd00e2-6ac3-47a1-91f9-cc38f696bc54",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.617Z",
-      "modified_at": "2023-03-10T12:14:02.617Z",
-      "email": "witchking@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Witch King",
-      "first_name": "Witch",
-      "last_name": "King",
-      "deactivated_at": null,
-      "rate": "20.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.616Z",
+        "modified_at": "2023-03-10T12:14:02.616Z",
+        "email": "legolas@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Legolas Greenleaf",
+        "first_name": "Legolas",
+        "last_name": "Greenleaf",
+        "deactivated_at": null,
+        "rate": "20.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "78de6315-80ad-4fdf-aa1e-601aa541f2a0",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.607Z",
-      "modified_at": "2023-03-10T12:14:02.607Z",
-      "email": "gandalftheadmin@test.com",
-      "is_staff": true,
-      "is_active": true,
-      "name": "Gandalf Stormcrow",
-      "first_name": "Gandalf",
-      "last_name": "Stormcrow",
-      "deactivated_at": null,
-      "rate": null,
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.619Z",
+        "modified_at": "2023-03-10T12:14:02.619Z",
+        "email": "sauron@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Sauron Maiar",
+        "first_name": "Sauron",
+        "last_name": "Maiar",
+        "deactivated_at": null,
+        "rate": "30.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "b56746b6-3cb1-4a26-a1e2-5a405673659d",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.613Z",
-      "modified_at": "2023-03-10T12:14:02.613Z",
-      "email": "sam@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Samwise Gamgee",
-      "first_name": "Samwise",
-      "last_name": "Gamgee",
-      "deactivated_at": null,
-      "rate": "15.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$SElXSThOQlpCVldKZkRwdEVCVHB2dA$+9ThwzGb1TvXRRy2lPP+xync5m43c5S97fnsa7AlkOE",
+        "last_login": "2023-03-12T18:06:44Z",
+        "is_superuser": true,
+        "created_at": "2023-03-10T07:06:42.048Z",
+        "modified_at": "2023-03-12T18:07:27.549Z",
+        "email": "bakersoft@admin.com",
+        "is_staff": true,
+        "is_active": true,
+        "name": "Baker Soft",
+        "first_name": "Baker",
+        "last_name": "Soft",
+        "deactivated_at": null,
+        "rate": null,
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "c7c45fcb-79d0-40c7-bd36-c3dc8a4c3c9f",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.611Z",
-      "modified_at": "2023-03-10T12:14:02.611Z",
-      "email": "denethortheadmin@test.com",
-      "is_staff": true,
-      "is_active": true,
-      "name": "Denethor Steward",
-      "first_name": "Denethor",
-      "last_name": "Steward",
-      "deactivated_at": null,
-      "rate": null,
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.615Z",
+        "modified_at": "2023-03-10T12:14:02.615Z",
+        "email": "eowyn@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Eowyn Steward",
+        "first_name": "Eowyn",
+        "last_name": "Steward",
+        "deactivated_at": null,
+        "rate": "20.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "dbc02b04-1c68-403b-8c72-529a85d6d393",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.614Z",
-      "modified_at": "2023-03-10T12:14:02.614Z",
-      "email": "aragorn@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Aragorn Dunedain",
-      "first_name": "Aragorn",
-      "last_name": "Dunedain",
-      "deactivated_at": null,
-      "rate": "25.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.614Z",
+        "modified_at": "2023-03-10T12:14:02.614Z",
+        "email": "aragorn@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Aragorn Dunedain",
+        "first_name": "Aragorn",
+        "last_name": "Dunedain",
+        "deactivated_at": null,
+        "rate": "25.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "edd02ccc-c2f9-4105-b275-38af269c46fa",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.615Z",
-      "modified_at": "2023-03-10T12:14:02.615Z",
-      "email": "gimli@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Gimli Gloinson",
-      "first_name": "Gimli",
-      "last_name": "Gloinson",
-      "deactivated_at": null,
-      "rate": "20.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.614Z",
+        "modified_at": "2023-03-10T12:14:02.614Z",
+        "email": "pippin@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Peregrin Took",
+        "first_name": "Peregrin",
+        "last_name": "Took",
+        "deactivated_at": null,
+        "rate": "15.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "ee006179-9d81-437e-84a3-2d23a0f844ac",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.618Z",
-      "modified_at": "2023-03-10T12:14:02.618Z",
-      "email": "gollum@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Smeagol Ringbearer",
-      "first_name": "Smeagol",
-      "last_name": "Ringbearer",
-      "deactivated_at": null,
-      "rate": "10.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.615Z",
+        "modified_at": "2023-03-10T12:14:02.615Z",
+        "email": "gimli@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Gimli Gloinson",
+        "first_name": "Gimli",
+        "last_name": "Gloinson",
+        "deactivated_at": null,
+        "rate": "20.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "f1653b06-21e0-46b7-a310-131cece3a9ee",
     "fields": {
-      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$SElXSThOQlpCVldKZkRwdEVCVHB2dA$+9ThwzGb1TvXRRy2lPP+xync5m43c5S97fnsa7AlkOE",
-      "last_login": "2023-03-10T07:07:24.762Z",
-      "is_superuser": true,
-      "created_at": "2023-03-10T07:06:42.048Z",
-      "modified_at": "2023-03-10T07:06:42.121Z",
-      "email": "bakersoft@admin.com",
-      "is_staff": true,
-      "is_active": true,
-      "name": "",
-      "first_name": "",
-      "last_name": "",
-      "deactivated_at": null,
-      "rate": null,
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.612Z",
+        "modified_at": "2023-03-10T12:14:02.612Z",
+        "email": "frodo@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Frodo Baggins",
+        "first_name": "Frodo",
+        "last_name": "Baggins",
+        "deactivated_at": null,
+        "rate": "15.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "f31b2962-7b2b-46bd-88e5-4cd69d7382f2",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.618Z",
-      "modified_at": "2023-03-10T12:14:02.618Z",
-      "email": "saruman@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Saruman White",
-      "first_name": "Saruman",
-      "last_name": "White",
-      "deactivated_at": null,
-      "rate": "25.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.618Z",
+        "modified_at": "2023-03-10T12:14:02.618Z",
+        "email": "gollum@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "name": "Smeagol Ringbearer",
+        "first_name": "Smeagol",
+        "last_name": "Ringbearer",
+        "deactivated_at": null,
+        "rate": "10.00",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "users.user",
-    "pk": "fff16ec2-b7e6-4b6a-9f54-ce6e4cbc4381",
     "fields": {
-      "password": "",
-      "last_login": null,
-      "is_superuser": false,
-      "created_at": "2023-03-10T12:14:02.615Z",
-      "modified_at": "2023-03-10T12:14:02.615Z",
-      "email": "eowyn@test.com",
-      "is_staff": false,
-      "is_active": true,
-      "name": "Eowyn Steward",
-      "first_name": "Eowyn",
-      "last_name": "Steward",
-      "deactivated_at": null,
-      "rate": "20.00",
-      "groups": [],
-      "user_permissions": []
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "created_at": "2023-03-10T12:14:02.607Z",
+        "modified_at": "2023-03-10T12:14:02.607Z",
+        "email": "gandalftheadmin@test.com",
+        "is_staff": true,
+        "is_active": true,
+        "name": "Gandalf Stormcrow",
+        "first_name": "Gandalf",
+        "last_name": "Stormcrow",
+        "deactivated_at": null,
+        "rate": null,
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
     "model": "tracker.company",
     "pk": "1e744f12-04a1-4538-8b6f-3e9d00a1920d",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.620Z",
-      "modified_at": "2023-03-10T12:14:02.620Z",
-      "name": "Gondor, Inc.",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been."
+        "created_at": "2023-03-10T12:14:02.620Z",
+        "modified_at": "2023-03-10T12:14:02.620Z",
+        "name": "Gondor, Inc.",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been."
     }
-  },
-  {
+},
+{
     "model": "tracker.company",
     "pk": "4d84eb3c-de5c-47b8-8abf-0c27239e4f43",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.621Z",
-      "modified_at": "2023-03-10T12:14:02.621Z",
-      "name": "Mordor, Inc.",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous."
+        "created_at": "2023-03-10T12:14:02.621Z",
+        "modified_at": "2023-03-10T12:14:02.621Z",
+        "name": "Mordor, Inc.",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous."
     }
-  },
-  {
+},
+{
     "model": "tracker.company",
     "pk": "a4e654bc-be61-4ee6-8a0e-c093163a81a8",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.621Z",
-      "modified_at": "2023-03-10T12:14:02.621Z",
-      "name": "Rohan, Inc.",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt."
+        "created_at": "2023-03-10T12:14:02.621Z",
+        "modified_at": "2023-03-10T12:14:02.621Z",
+        "name": "Rohan, Inc.",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt."
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "00dc5494-a989-48ee-897f-f36cbd3c60e6",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.632Z",
-      "modified_at": "2023-03-10T12:14:02.660Z",
-      "company": "4d84eb3c-de5c-47b8-8abf-0c27239e4f43",
-      "name": "Attack Helm's Deep",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "users": [
-        "ee006179-9d81-437e-84a3-2d23a0f844ac",
-        "f31b2962-7b2b-46bd-88e5-4cd69d7382f2"
-      ]
+        "created_at": "2023-03-10T12:14:02.632Z",
+        "modified_at": "2023-03-10T12:14:02.660Z",
+        "company": "4d84eb3c-de5c-47b8-8abf-0c27239e4f43",
+        "name": "Attack Helm's Deep",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "users": [
+            [
+                "gollum@test.com"
+            ],
+            [
+                "saruman@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "1c8cf3e6-27ac-4064-b2f0-b00e93d36e51",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.626Z",
-      "modified_at": "2023-03-10T12:14:02.644Z",
-      "company": "1e744f12-04a1-4538-8b6f-3e9d00a1920d",
-      "name": "Crown the New King",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "users": [
-        "2c305b58-baad-492f-9c4a-c9f52b782ccf",
-        "b56746b6-3cb1-4a26-a1e2-5a405673659d"
-      ]
+        "created_at": "2023-03-10T12:14:02.626Z",
+        "modified_at": "2023-03-10T12:14:02.644Z",
+        "company": "1e744f12-04a1-4538-8b6f-3e9d00a1920d",
+        "name": "Crown the New King",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "users": [
+            [
+                "frodo@test.com"
+            ],
+            [
+                "sam@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "35692213-4241-4ab5-9eb7-23cfe8d15635",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.627Z",
-      "modified_at": "2023-03-10T12:14:02.648Z",
-      "company": "a4e654bc-be61-4ee6-8a0e-c093163a81a8",
-      "name": "Defend Helm's Deep",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "users": [
-        "dbc02b04-1c68-403b-8c72-529a85d6d393",
-        "11ef0787-650a-4cfe-bfef-3000dc593540"
-      ]
+        "created_at": "2023-03-10T12:14:02.627Z",
+        "modified_at": "2023-03-10T12:14:02.648Z",
+        "company": "a4e654bc-be61-4ee6-8a0e-c093163a81a8",
+        "name": "Defend Helm's Deep",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "users": [
+            [
+                "aragorn@test.com"
+            ],
+            [
+                "legolas@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "5eaff4f0-f5a1-4034-9b00-0a1121e83c03",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.628Z",
-      "modified_at": "2023-03-10T12:14:02.652Z",
-      "company": "a4e654bc-be61-4ee6-8a0e-c093163a81a8",
-      "name": "Travel to Helm's Deep",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "users": [
-        "fff16ec2-b7e6-4b6a-9f54-ce6e4cbc4381",
-        "edd02ccc-c2f9-4105-b275-38af269c46fa"
-      ]
+        "created_at": "2023-03-10T12:14:02.628Z",
+        "modified_at": "2023-03-10T12:14:02.652Z",
+        "company": "a4e654bc-be61-4ee6-8a0e-c093163a81a8",
+        "name": "Travel to Helm's Deep",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "users": [
+            [
+                "eowyn@test.com"
+            ],
+            [
+                "gimli@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "7669f06d-f82e-4058-95ab-1c88148f23ea",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.623Z",
-      "modified_at": "2023-03-10T12:14:02.640Z",
-      "company": "1e744f12-04a1-4538-8b6f-3e9d00a1920d",
-      "name": "Defend Minas Tirith",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "users": [
-        "532de075-134a-4ac5-884d-dd49611d4f3d",
-        "09fcdfe9-23b6-467f-b5de-d5ed92d85c34"
-      ]
+        "created_at": "2023-03-10T12:14:02.623Z",
+        "modified_at": "2023-03-10T12:14:02.640Z",
+        "company": "1e744f12-04a1-4538-8b6f-3e9d00a1920d",
+        "name": "Defend Minas Tirith",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "users": [
+            [
+                "merry@test.com"
+            ],
+            [
+                "pippin@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.project",
     "pk": "be8957d7-1837-4f7f-887e-28997f2a7100",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.630Z",
-      "modified_at": "2023-03-10T12:14:02.656Z",
-      "company": "4d84eb3c-de5c-47b8-8abf-0c27239e4f43",
-      "name": "Attack Minas Tirith",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "users": [
-        "27706cc7-c1c7-4dfd-8244-5b8d8d0a6aa0",
-        "54fd00e2-6ac3-47a1-91f9-cc38f696bc54"
-      ]
+        "created_at": "2023-03-10T12:14:02.630Z",
+        "modified_at": "2023-03-10T12:14:02.656Z",
+        "company": "4d84eb3c-de5c-47b8-8abf-0c27239e4f43",
+        "name": "Attack Minas Tirith",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "users": [
+            [
+                "sauron@test.com"
+            ],
+            [
+                "witchking@test.com"
+            ]
+        ]
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "0c845703-c82d-4e8e-bce6-ff73db441b6f",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.678Z",
-      "modified_at": "2023-03-10T12:14:02.678Z",
-      "user": "11ef0787-650a-4cfe-bfef-3000dc593540",
-      "project": "35692213-4241-4ab5-9eb7-23cfe8d15635",
-      "name": "Wait for Gandalf",
-      "code": "Gandalf | Heml Deep",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "type": 1,
-      "status": 1
+        "created_at": "2023-03-10T12:14:02.678Z",
+        "modified_at": "2023-03-10T12:14:02.678Z",
+        "user": [
+            "legolas@test.com"
+        ],
+        "project": "35692213-4241-4ab5-9eb7-23cfe8d15635",
+        "name": "Wait for Gandalf",
+        "code": "Gandalf | Heml Deep",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "type": 1,
+        "status": 1
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "2eaa0df9-22cd-48b3-a6d6-b5f6637b0532",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.691Z",
-      "modified_at": "2023-03-10T12:14:02.691Z",
-      "user": "27706cc7-c1c7-4dfd-8244-5b8d8d0a6aa0",
-      "project": "be8957d7-1837-4f7f-887e-28997f2a7100",
-      "name": "Let Nazgûl do their thing",
-      "code": "Nazgûl | Minas Tirith Destroy",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "type": 7,
-      "status": 1
+        "created_at": "2023-03-10T12:14:02.691Z",
+        "modified_at": "2023-03-10T12:14:02.691Z",
+        "user": [
+            "sauron@test.com"
+        ],
+        "project": "be8957d7-1837-4f7f-887e-28997f2a7100",
+        "name": "Let Nazgûl do their thing",
+        "code": "Nazgûl | Minas Tirith Destroy",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "type": 7,
+        "status": 1
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "333dd5af-a5cb-442a-8344-cc3a75198d26",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.675Z",
-      "modified_at": "2023-03-10T12:14:02.675Z",
-      "user": "dbc02b04-1c68-403b-8c72-529a85d6d393",
-      "project": "35692213-4241-4ab5-9eb7-23cfe8d15635",
-      "name": "Accept help from elves",
-      "code": "Elves | Helm Deep",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "type": 1,
-      "status": 2
+        "created_at": "2023-03-10T12:14:02.675Z",
+        "modified_at": "2023-03-10T12:14:02.675Z",
+        "user": [
+            "aragorn@test.com"
+        ],
+        "project": "35692213-4241-4ab5-9eb7-23cfe8d15635",
+        "name": "Accept help from elves",
+        "code": "Elves | Helm Deep",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "type": 1,
+        "status": 2
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "3804ce19-10d7-4fc2-abef-ce0af68dcdf9",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.666Z",
-      "modified_at": "2023-03-10T12:14:02.666Z",
-      "user": "532de075-134a-4ac5-884d-dd49611d4f3d",
-      "project": "7669f06d-f82e-4058-95ab-1c88148f23ea",
-      "name": "Battle in Pelennor Field",
-      "code": "Pelennor | Minas Tirith",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "type": 1,
-      "status": 3
+        "created_at": "2023-03-10T12:14:02.666Z",
+        "modified_at": "2023-03-10T12:14:02.666Z",
+        "user": [
+            "merry@test.com"
+        ],
+        "project": "7669f06d-f82e-4058-95ab-1c88148f23ea",
+        "name": "Battle in Pelennor Field",
+        "code": "Pelennor | Minas Tirith",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "type": 1,
+        "status": 3
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "3e6a146b-23a1-4b3c-aa8b-012e7ef01cf4",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.672Z",
-      "modified_at": "2023-03-10T12:14:02.672Z",
-      "user": "b56746b6-3cb1-4a26-a1e2-5a405673659d",
-      "project": "1c8cf3e6-27ac-4064-b2f0-b00e93d36e51",
-      "name": "Set up the decorations",
-      "code": "Deco | New King",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "type": 5,
-      "status": 2
+        "created_at": "2023-03-10T12:14:02.672Z",
+        "modified_at": "2023-03-10T12:14:02.672Z",
+        "user": [
+            "sam@test.com"
+        ],
+        "project": "1c8cf3e6-27ac-4064-b2f0-b00e93d36e51",
+        "name": "Set up the decorations",
+        "code": "Deco | New King",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "type": 5,
+        "status": 2
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "68f021fb-b549-4649-9faf-f48a370db91c",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.696Z",
-      "modified_at": "2023-03-10T12:14:02.696Z",
-      "user": "ee006179-9d81-437e-84a3-2d23a0f844ac",
-      "project": "00dc5494-a989-48ee-897f-f36cbd3c60e6",
-      "name": "Let Uruk-hai do their thing",
-      "code": "Uruk | Helm Deep Destroy",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "type": 6,
-      "status": 4
+        "created_at": "2023-03-10T12:14:02.696Z",
+        "modified_at": "2023-03-10T12:14:02.696Z",
+        "user": [
+            "gollum@test.com"
+        ],
+        "project": "00dc5494-a989-48ee-897f-f36cbd3c60e6",
+        "name": "Let Uruk-hai do their thing",
+        "code": "Uruk | Helm Deep Destroy",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "type": 6,
+        "status": 4
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "6bb4a3a3-b994-4872-905c-1a215854498f",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.684Z",
-      "modified_at": "2023-03-10T12:14:02.684Z",
-      "user": "fff16ec2-b7e6-4b6a-9f54-ce6e4cbc4381",
-      "project": "5eaff4f0-f5a1-4034-9b00-0a1121e83c03",
-      "name": "Survive hike",
-      "code": "Survive | Helm Deep Travel",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "type": 4,
-      "status": 1
+        "created_at": "2023-03-10T12:14:02.684Z",
+        "modified_at": "2023-03-10T12:14:02.684Z",
+        "user": [
+            "eowyn@test.com"
+        ],
+        "project": "5eaff4f0-f5a1-4034-9b00-0a1121e83c03",
+        "name": "Survive hike",
+        "code": "Survive | Helm Deep Travel",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "type": 4,
+        "status": 1
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "6ca0d864-5412-473e-af41-11d224eeb4c4",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.688Z",
-      "modified_at": "2023-03-10T12:14:02.688Z",
-      "user": "54fd00e2-6ac3-47a1-91f9-cc38f696bc54",
-      "project": "be8957d7-1837-4f7f-887e-28997f2a7100",
-      "name": "Rally the armies",
-      "code": "Armies | Minas Tirith Destroy",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "type": 6,
-      "status": 4
+        "created_at": "2023-03-10T12:14:02.688Z",
+        "modified_at": "2023-03-10T12:14:02.688Z",
+        "user": [
+            "witchking@test.com"
+        ],
+        "project": "be8957d7-1837-4f7f-887e-28997f2a7100",
+        "name": "Rally the armies",
+        "code": "Armies | Minas Tirith Destroy",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "type": 6,
+        "status": 4
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "a0362b62-0772-4f5e-a8c5-b5b5e57622f8",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.669Z",
-      "modified_at": "2023-03-10T12:14:02.669Z",
-      "user": "2c305b58-baad-492f-9c4a-c9f52b782ccf",
-      "project": "1c8cf3e6-27ac-4064-b2f0-b00e93d36e51",
-      "name": "Polish the Crown",
-      "code": "Crown | New King",
-      "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
-      "type": 1,
-      "status": 5
+        "created_at": "2023-03-10T12:14:02.669Z",
+        "modified_at": "2023-03-10T12:14:02.669Z",
+        "user": [
+            "frodo@test.com"
+        ],
+        "project": "1c8cf3e6-27ac-4064-b2f0-b00e93d36e51",
+        "name": "Polish the Crown",
+        "code": "Crown | New King",
+        "description": "One Ring to rule them all. Place Bracegirdles bonds! Moved heal glass treachery caretaker gems dominion mark Aragorn. Barad-dur plates been.",
+        "type": 1,
+        "status": 5
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "a8ec50ff-bfe0-4749-802d-063e2db67aa4",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.681Z",
-      "modified_at": "2023-03-10T12:14:02.681Z",
-      "user": "edd02ccc-c2f9-4105-b275-38af269c46fa",
-      "project": "5eaff4f0-f5a1-4034-9b00-0a1121e83c03",
-      "name": "Survive warg attack",
-      "code": "Warg | Helm Deep Travel",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "type": 3,
-      "status": 3
+        "created_at": "2023-03-10T12:14:02.681Z",
+        "modified_at": "2023-03-10T12:14:02.681Z",
+        "user": [
+            "gimli@test.com"
+        ],
+        "project": "5eaff4f0-f5a1-4034-9b00-0a1121e83c03",
+        "name": "Survive warg attack",
+        "code": "Warg | Helm Deep Travel",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "type": 3,
+        "status": 3
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "aad631f3-9fbe-46a9-ba29-91258226abbf",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.662Z",
-      "modified_at": "2023-03-10T12:14:02.662Z",
-      "user": "09fcdfe9-23b6-467f-b5de-d5ed92d85c34",
-      "project": "7669f06d-f82e-4058-95ab-1c88148f23ea",
-      "name": "Summon Rohan",
-      "code": "Rohan | Minas Tirith",
-      "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
-      "type": 1,
-      "status": 1
+        "created_at": "2023-03-10T12:14:02.662Z",
+        "modified_at": "2023-03-10T12:14:02.662Z",
+        "user": [
+            "pippin@test.com"
+        ],
+        "project": "7669f06d-f82e-4058-95ab-1c88148f23ea",
+        "name": "Summon Rohan",
+        "code": "Rohan | Minas Tirith",
+        "description": "Barad-dur plates been. Movement well denying ten insect Freda faces resolved? Angry Galadhrim haunted doorway hang clean sweeps nervous.",
+        "type": 1,
+        "status": 1
     }
-  },
-  {
+},
+{
     "model": "tracker.task",
     "pk": "da509609-ec89-44c8-96ba-9ca3b603028a",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.694Z",
-      "modified_at": "2023-03-10T12:14:02.694Z",
-      "user": "f31b2962-7b2b-46bd-88e5-4cd69d7382f2",
-      "project": "00dc5494-a989-48ee-897f-f36cbd3c60e6",
-      "name": "Rally the armies",
-      "code": "Armies | Helm Deep Destroy",
-      "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
-      "type": 2,
-      "status": 2
+        "created_at": "2023-03-10T12:14:02.694Z",
+        "modified_at": "2023-03-10T12:14:02.694Z",
+        "user": [
+            "saruman@test.com"
+        ],
+        "project": "00dc5494-a989-48ee-897f-f36cbd3c60e6",
+        "name": "Rally the armies",
+        "code": "Armies | Helm Deep Destroy",
+        "description": "Goats Helm Hammerhand back wandered tempted resisted? Wanted 300 never relevant use Eldar. Against split Greenwood guide angry blunt.",
+        "type": 2,
+        "status": 2
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "1da148b3-73b1-4f18-959f-a3d2763eff8b",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.691Z",
-      "modified_at": "2023-03-10T12:14:02.691Z",
-      "task": "2eaa0df9-22cd-48b3-a6d6-b5f6637b0532",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "133.00"
+        "created_at": "2023-03-10T12:14:02.691Z",
+        "modified_at": "2023-03-10T12:14:02.691Z",
+        "task": "2eaa0df9-22cd-48b3-a6d6-b5f6637b0532",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "133.00"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "22da64bd-1839-4b97-9088-87ad65baab28",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.685Z",
-      "modified_at": "2023-03-10T13:29:17.209Z",
-      "task": "6bb4a3a3-b994-4872-905c-1a215854498f",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "201.00"
+        "created_at": "2023-03-10T12:14:02.685Z",
+        "modified_at": "2023-03-10T13:29:17.209Z",
+        "task": "6bb4a3a3-b994-4872-905c-1a215854498f",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "201.00"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "2bf532ba-c6db-4a14-a04a-a40aa3c6302f",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.670Z",
-      "modified_at": "2023-03-10T13:29:17.204Z",
-      "task": "a0362b62-0772-4f5e-a8c5-b5b5e57622f8",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "150.75"
+        "created_at": "2023-03-10T12:14:02.670Z",
+        "modified_at": "2023-03-10T13:29:17.204Z",
+        "task": "a0362b62-0772-4f5e-a8c5-b5b5e57622f8",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "150.75"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "2d39aca6-cd23-44f5-ac2e-e94aed2cc44f",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.695Z",
-      "modified_at": "2023-03-10T13:29:17.211Z",
-      "task": "da509609-ec89-44c8-96ba-9ca3b603028a",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "251.25"
+        "created_at": "2023-03-10T12:14:02.695Z",
+        "modified_at": "2023-03-10T13:29:17.211Z",
+        "task": "da509609-ec89-44c8-96ba-9ca3b603028a",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "251.25"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "3eadd46c-c3b8-4b5d-92da-b9373711b6ed",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.694Z",
-      "modified_at": "2023-03-10T12:14:02.694Z",
-      "task": "da509609-ec89-44c8-96ba-9ca3b603028a",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "110.83"
+        "created_at": "2023-03-10T12:14:02.694Z",
+        "modified_at": "2023-03-10T12:14:02.694Z",
+        "task": "da509609-ec89-44c8-96ba-9ca3b603028a",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "110.83"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "5a771d15-50a3-420b-be10-decab799ffec",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.673Z",
-      "modified_at": "2023-03-10T12:14:02.673Z",
-      "task": "3e6a146b-23a1-4b3c-aa8b-012e7ef01cf4",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "66.50"
+        "created_at": "2023-03-10T12:14:02.673Z",
+        "modified_at": "2023-03-10T12:14:02.673Z",
+        "task": "3e6a146b-23a1-4b3c-aa8b-012e7ef01cf4",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "66.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "610c515a-93c2-41c3-b338-266452ad951a",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.679Z",
-      "modified_at": "2023-03-10T12:14:02.679Z",
-      "task": "0c845703-c82d-4e8e-bce6-ff73db441b6f",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "88.67"
+        "created_at": "2023-03-10T12:14:02.679Z",
+        "modified_at": "2023-03-10T12:14:02.679Z",
+        "task": "0c845703-c82d-4e8e-bce6-ff73db441b6f",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "88.67"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "64dd58e3-82ee-44af-930a-c3089de6cd83",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.669Z",
-      "modified_at": "2023-03-10T12:14:02.669Z",
-      "task": "a0362b62-0772-4f5e-a8c5-b5b5e57622f8",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "66.50"
+        "created_at": "2023-03-10T12:14:02.669Z",
+        "modified_at": "2023-03-10T12:14:02.669Z",
+        "task": "a0362b62-0772-4f5e-a8c5-b5b5e57622f8",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "66.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "67eecb94-6347-490a-acfc-c98f0b876e70",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.697Z",
-      "modified_at": "2023-03-10T13:29:17.213Z",
-      "task": "68f021fb-b549-4649-9faf-f48a370db91c",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "100.50"
+        "created_at": "2023-03-10T12:14:02.697Z",
+        "modified_at": "2023-03-10T13:29:17.213Z",
+        "task": "68f021fb-b549-4649-9faf-f48a370db91c",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "100.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "74a249de-f2f2-48a1-863c-9b665a5487f5",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.667Z",
-      "modified_at": "2023-03-10T13:29:17.202Z",
-      "task": "3804ce19-10d7-4fc2-abef-ce0af68dcdf9",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "150.75"
+        "created_at": "2023-03-10T12:14:02.667Z",
+        "modified_at": "2023-03-10T13:29:17.202Z",
+        "task": "3804ce19-10d7-4fc2-abef-ce0af68dcdf9",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "150.75"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "755649bc-4269-4bfe-bbd2-7c08f690a702",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.697Z",
-      "modified_at": "2023-03-10T12:14:02.697Z",
-      "task": "68f021fb-b549-4649-9faf-f48a370db91c",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "44.33"
+        "created_at": "2023-03-10T12:14:02.697Z",
+        "modified_at": "2023-03-10T12:14:02.697Z",
+        "task": "68f021fb-b549-4649-9faf-f48a370db91c",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "44.33"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "798cd44c-31b2-4707-b07a-f5ed10c8093f",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.663Z",
-      "modified_at": "2023-03-10T12:14:02.663Z",
-      "task": "aad631f3-9fbe-46a9-ba29-91258226abbf",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "66.50"
+        "created_at": "2023-03-10T12:14:02.663Z",
+        "modified_at": "2023-03-10T12:14:02.663Z",
+        "task": "aad631f3-9fbe-46a9-ba29-91258226abbf",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "66.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "8bf0e8d1-dc1c-4e88-8e75-862a1637bf56",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.689Z",
-      "modified_at": "2023-03-10T13:29:17.210Z",
-      "task": "6ca0d864-5412-473e-af41-11d224eeb4c4",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "201.00"
+        "created_at": "2023-03-10T12:14:02.689Z",
+        "modified_at": "2023-03-10T13:29:17.210Z",
+        "task": "6ca0d864-5412-473e-af41-11d224eeb4c4",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "201.00"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "99e7deba-8f66-46eb-be09-3150a4b5cffb",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.685Z",
-      "modified_at": "2023-03-10T12:14:02.685Z",
-      "task": "6bb4a3a3-b994-4872-905c-1a215854498f",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "88.67"
+        "created_at": "2023-03-10T12:14:02.685Z",
+        "modified_at": "2023-03-10T12:14:02.685Z",
+        "task": "6bb4a3a3-b994-4872-905c-1a215854498f",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "88.67"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "b63279c4-fa01-4057-97ee-99c4a8e8bbf5",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.680Z",
-      "modified_at": "2023-03-10T13:29:17.207Z",
-      "task": "0c845703-c82d-4e8e-bce6-ff73db441b6f",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "201.00"
+        "created_at": "2023-03-10T12:14:02.680Z",
+        "modified_at": "2023-03-10T13:29:17.207Z",
+        "task": "0c845703-c82d-4e8e-bce6-ff73db441b6f",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "201.00"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "ba058a57-5686-4e78-8d26-c68d6e0a81c9",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.682Z",
-      "modified_at": "2023-03-10T12:14:02.682Z",
-      "task": "a8ec50ff-bfe0-4749-802d-063e2db67aa4",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "88.67"
+        "created_at": "2023-03-10T12:14:02.682Z",
+        "modified_at": "2023-03-10T12:14:02.682Z",
+        "task": "a8ec50ff-bfe0-4749-802d-063e2db67aa4",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "88.67"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "cadfd047-301a-40c1-8ce1-ce2bf8e68003",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.664Z",
-      "modified_at": "2023-03-10T13:29:17.198Z",
-      "task": "aad631f3-9fbe-46a9-ba29-91258226abbf",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "150.75"
+        "created_at": "2023-03-10T12:14:02.664Z",
+        "modified_at": "2023-03-10T13:29:17.198Z",
+        "task": "aad631f3-9fbe-46a9-ba29-91258226abbf",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "150.75"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "d3134d48-e395-4859-9f8a-5f491ae34eff",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.677Z",
-      "modified_at": "2023-03-10T13:29:17.206Z",
-      "task": "333dd5af-a5cb-442a-8344-cc3a75198d26",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "251.25"
+        "created_at": "2023-03-10T12:14:02.677Z",
+        "modified_at": "2023-03-10T13:29:17.206Z",
+        "task": "333dd5af-a5cb-442a-8344-cc3a75198d26",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "251.25"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "ddea8653-22be-401a-a524-79b3c151c5dc",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.692Z",
-      "modified_at": "2023-03-10T13:29:17.210Z",
-      "task": "2eaa0df9-22cd-48b3-a6d6-b5f6637b0532",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "301.50"
+        "created_at": "2023-03-10T12:14:02.692Z",
+        "modified_at": "2023-03-10T13:29:17.210Z",
+        "task": "2eaa0df9-22cd-48b3-a6d6-b5f6637b0532",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "301.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "e341f8be-d808-41ff-8eb3-e7b7194b31cd",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.673Z",
-      "modified_at": "2023-03-10T13:29:17.205Z",
-      "task": "3e6a146b-23a1-4b3c-aa8b-012e7ef01cf4",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "150.75"
+        "created_at": "2023-03-10T12:14:02.673Z",
+        "modified_at": "2023-03-10T13:29:17.205Z",
+        "task": "3e6a146b-23a1-4b3c-aa8b-012e7ef01cf4",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "150.75"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "e8792de4-1c03-403e-a35e-537ea7143180",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.666Z",
-      "modified_at": "2023-03-10T12:14:02.666Z",
-      "task": "3804ce19-10d7-4fc2-abef-ce0af68dcdf9",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "66.50"
+        "created_at": "2023-03-10T12:14:02.666Z",
+        "modified_at": "2023-03-10T12:14:02.666Z",
+        "task": "3804ce19-10d7-4fc2-abef-ce0af68dcdf9",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "66.50"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "ee31f575-d74a-418c-addf-d434ea847f04",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.688Z",
-      "modified_at": "2023-03-10T12:14:02.688Z",
-      "task": "6ca0d864-5412-473e-af41-11d224eeb4c4",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "88.67"
+        "created_at": "2023-03-10T12:14:02.688Z",
+        "modified_at": "2023-03-10T12:14:02.688Z",
+        "task": "6ca0d864-5412-473e-af41-11d224eeb4c4",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "88.67"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "f3751938-7dd6-42ac-b380-d665f630eee7",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.682Z",
-      "modified_at": "2023-03-10T13:29:17.208Z",
-      "task": "a8ec50ff-bfe0-4749-802d-063e2db67aa4",
-      "comment": "",
-      "start_time": "2023-03-10T02:11:01.488Z",
-      "pause_time": "2023-03-10T12:14:01.488Z",
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 2,
-      "total_time": 36180,
-      "hours": "10.050000",
-      "bill": "201.00"
+        "created_at": "2023-03-10T12:14:02.682Z",
+        "modified_at": "2023-03-10T13:29:17.208Z",
+        "task": "a8ec50ff-bfe0-4749-802d-063e2db67aa4",
+        "comment": "",
+        "start_time": "2023-03-10T02:11:01.488Z",
+        "pause_time": "2023-03-10T12:14:01.488Z",
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 2,
+        "total_time": 36180,
+        "hours": "10.050000",
+        "bill": "201.00"
     }
-  },
-  {
+},
+{
     "model": "tracker.entry",
     "pk": "f3a22767-11ab-4a6d-ba18-3ebe18f14072",
     "fields": {
-      "created_at": "2023-03-10T12:14:02.676Z",
-      "modified_at": "2023-03-10T12:14:02.676Z",
-      "task": "333dd5af-a5cb-442a-8344-cc3a75198d26",
-      "comment": "",
-      "start_time": "2023-03-10T07:48:01.487Z",
-      "pause_time": null,
-      "end_time": "2023-03-10T12:14:01.488Z",
-      "status": 3,
-      "total_time": 15960,
-      "hours": "4.433333",
-      "bill": "110.83"
+        "created_at": "2023-03-10T12:14:02.676Z",
+        "modified_at": "2023-03-10T12:14:02.676Z",
+        "task": "333dd5af-a5cb-442a-8344-cc3a75198d26",
+        "comment": "",
+        "start_time": "2023-03-10T07:48:01.487Z",
+        "pause_time": null,
+        "end_time": "2023-03-10T12:14:01.488Z",
+        "status": 3,
+        "total_time": 15960,
+        "hours": "4.433333",
+        "bill": "110.83"
     }
-  }
+}
 ]
