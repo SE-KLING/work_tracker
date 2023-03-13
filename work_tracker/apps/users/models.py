@@ -72,6 +72,10 @@ class User(AbstractEmailUser, TimeStampedModel):
     deactivated_at = models.DateTimeField(blank=True, null=True)
     rate = AmountField(verbose_name="Hourly Rate", blank=True, null=True, db_index=True)
 
+    objects = UserManager()
+
+    REQUIRED_FIELDS = []
+
     def save(self, **kwargs):
         self.name = " ".join(map(str, [self.first_name, self.last_name])).strip()
         return super().save(**kwargs)
