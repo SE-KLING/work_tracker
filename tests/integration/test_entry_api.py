@@ -82,7 +82,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
         hour_offset = 4
         entry_time = entry.start_time + datetime.timedelta(hours=hour_offset)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.PAUSE.name,
             'entry_time': entry_time
         }
@@ -100,7 +99,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
     def test_entry_pause_validation(self):
         entry = factories.EntryFactory(task=self.task_1, status=EntryStatus.PAUSED)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.PAUSE.name,
             'entry_time': entry.start_time + datetime.timedelta(hours=2)
         }
@@ -116,7 +114,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
                                        end_time=None)
         entry_time = entry.pause_time + datetime.timedelta(hours=4)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.RESUME.name,
             'entry_time': entry_time
         }
@@ -156,7 +153,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
         hour_offset = 3
         entry_time = entry.start_time + datetime.timedelta(hours=hour_offset)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.COMPLETE.name,
             'entry_time': entry_time
         }
@@ -180,7 +176,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
         entry = factories.EntryFactory(task=self.task_1, status=EntryStatus.PAUSED, start_time=start_time,
                                        end_time=None, pause_time=pause_time)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.COMPLETE.name,
             'entry_time': now
         }
@@ -198,7 +193,6 @@ class EntryAPITestCase(APITestCase, JWTMixin):
     def test_entry_complete_validation(self):
         entry = factories.EntryFactory(task=self.task_1, status=EntryStatus.COMPLETE)
         data = {
-            'task_id': entry.task.pk.hex,
             'action': EntryAction.COMPLETE.name,
             'entry_time': timezone.now()
         }

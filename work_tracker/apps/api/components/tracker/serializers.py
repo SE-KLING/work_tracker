@@ -187,6 +187,7 @@ class EntryManualCreateSerializer(serializers.ModelSerializer):
 
 # TASK SERIALIZERS
 
+
 class TaskListSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(read_only=True)
     user_id = serializers.UUIDField(read_only=True)
@@ -267,7 +268,7 @@ class ProjectDetailSerializer(ProjectListSerializer):
     company = serializers.CharField(read_only=True, source='company.name')
 
     # noinspection PyMethodMayBeStatic
-    def get_users(self, obj):
+    def get_users(self, obj) -> list:
         users = list(obj.users.values('id', 'email', 'name'))
         return users
 
@@ -305,6 +306,7 @@ class ProjectUpdateSerializer(serializers.ModelSerializer):
         model = Project
         fields = ('id', 'name', 'description')
 
+
 # COMPANY SERIALIZERS
 
 
@@ -322,7 +324,7 @@ class CompanyDetailSerializer(CompanyListSerializer):
     projects = serializers.SerializerMethodField()
 
     # noinspection PyMethodMayBeStatic
-    def get_projects(self, obj):
+    def get_projects(self, obj) -> list:
         projects = list(obj.projects.values('id', 'name', 'description'))
         return projects
 
@@ -337,8 +339,8 @@ class CompanyCreateSerializer(CompanyListSerializer):
 
 
 class CompanyUpdateSerializer(serializers.ModelSerializer):
-    pass
+    id = serializers.UUIDField(read_only=True)
 
     class Meta:
         model = Company
-        fields = '__all__'
+        fields = ('id', 'name', 'description')
