@@ -15,7 +15,8 @@ class RegistrationThrottle(UserRateThrottle):
 
 class RegisterView(CreateAPIView):
     """
-    Initial Registration view that allows for User creation.
+    Initial Registration view that allows for User creation and returns a JWT access token to be used for
+    Authentication in subsequent requests.
     """
 
     serializer_class = RegistrationSerializer
@@ -25,6 +26,9 @@ class RegisterView(CreateAPIView):
 
 
 class PasswordChangeView(UpdateAPIView):
+    """
+    Allows Users to update their current password.
+    """
     permission_classes = (IsAuthenticated,)
     authentication_classes = (JWTAuthentication,)
     serializer_class = ChangePasswordSerializer

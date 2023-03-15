@@ -53,7 +53,7 @@ class TaskAdmin(admin.ModelAdmin):
 
 @admin.register(models.Entry)
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ("id", "created_at", "entry_user", "task", "hours", "bill", "comment")
+    list_display = ("id", "created_at", "entry_user", "task", "hours", "bill", "status")
     ordering = ("status",)
     form = EntryAdditionForm
     fieldsets = (("Entry Details", {"fields": ("task", "start_time", "pause_time", "end_time")}),

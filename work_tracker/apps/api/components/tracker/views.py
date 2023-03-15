@@ -12,6 +12,12 @@ from work_tracker.apps.tracker.models import Company, Entry, Project, Task
 
 
 class CompanyViewSet(ActionSerializerMixin, ModelViewSet):
+    """
+    ViewSet that allows for CRUD functionality on the 'Company' Database table.
+    Regular authenticated Users will be able to perform 'GET' requests. However, 'POST',
+    'PATCH', 'PUT' and 'DELETE' requests are reserved for staff and superusers.
+    """
+
     basename = "company"
     serializer_class = serializers.CompanyListSerializer
     permission_classes = (IsAuthenticated, IsAuthorisedUser)
@@ -30,6 +36,11 @@ class CompanyViewSet(ActionSerializerMixin, ModelViewSet):
 
 
 class ProjectViewSet(ActionSerializerMixin, ModelViewSet):
+    """
+    ViewSet that allows for CRUD functionality on the 'Project' Database table.
+    Regular authenticated Users will be able to perform 'GET' requests. However, 'POST',
+    'PATCH', 'PUT' and 'DELETE' requests are reserved for staff and superusers.
+    """
     basename = "project"
     serializer_class = serializers.ProjectListSerializer
     permission_classes = (IsAuthenticated, IsAuthorisedUser)
@@ -52,6 +63,12 @@ class ProjectViewSet(ActionSerializerMixin, ModelViewSet):
 
 
 class EntryViewSet(ActionSerializerMixin, ModelViewSet):
+    """
+    ViewSet that allows for CRUD functionality on the 'Entry' Database table.
+    Endpoints are focused on the requesting User's Entries and include the functionality to
+    start an Entry using a 'POST' call, pause, resume and complete an Entry using a 'PUT' with a
+    'status' action call or manually create an Entry using the 'manualentry' endpoint.
+    """
     basename = "entry"
     serializer_class = serializers.EntryListSerializer
     permission_classes = (IsAuthenticated, UserSpecificEntries)
@@ -71,6 +88,10 @@ class EntryViewSet(ActionSerializerMixin, ModelViewSet):
         self.check_object_permissions(self.request, entry)
         return entry
 
+    def update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        return super().update(request, *args, **kwargs)
+
     @action(methods=["POST"], detail=False)
     def manualentry(self, request, *args, **kwargs):
         """
@@ -84,6 +105,13 @@ class EntryViewSet(ActionSerializerMixin, ModelViewSet):
 
 
 class TaskViewSet(ActionSerializerMixin, ModelViewSet):
+    """
+    ViewSet that allows for CRUD functionality on the 'Task' Database table.
+    Regular authenticated Users will be able to perform 'GET' requests. However, 'POST',
+    'PATCH', 'PUT' and 'DELETE' requests are reserved for staff and superusers.
+    Additionally, Users not involved in the Task's Project may not access the Task's detail view as
+    it lists Entry details pertaining to the Task.
+    """
     basename = "project"
     serializer_class = serializers.TaskListSerializer
     permission_classes = (IsAuthenticated, IsAuthorisedUser, ProjectSpecificTasks)

@@ -22,7 +22,7 @@ class UserAdmin(auth_admin.UserAdmin):
         (_("Personal info"), {"fields": ("first_name", "last_name", "rate")}),
         (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
     )
-    list_display = ("email", "name", "rate", "created_at", "is_active", "deactivated_at", "is_superuser")
+    list_display = ("id", "email", "name", "rate", "created_at", "is_active", "deactivated_at", "is_superuser")
     list_filter = ("is_active", "is_superuser")
     ordering = ("email",)
     search_fields = ("name", "email")

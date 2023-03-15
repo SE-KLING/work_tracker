@@ -9,7 +9,7 @@ from work_tracker.apps.users.models import User
 class UserAdminChangeForm(admin_forms.UserChangeForm):
     class Meta(admin_forms.UserChangeForm.Meta):
         model = User
-        fields = "__all__"
+        fields = ("email", "first_name", "last_name", "rate", "password")
         field_classes = {"email": forms.EmailField}
 
     def save(self, commit=True):
