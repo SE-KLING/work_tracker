@@ -51,8 +51,10 @@ $ docker-compose -f local.yml up -d
 
 Following the above, the container should now be running successfully.
 
-**On start, migrations will have been made, a data dump loaded on to the database and the local server would have been
-started, running on [http://0.0.0.0:8000/](http://0.0.0.0:8000/).**
+**NOTE:**
+
+> On start, migrations will have been made, a data dump loaded on to the database and the local server would have been
+started, running on [http://0.0.0.0:8000/](http://0.0.0.0:8000/).
 
 ****
 ****
@@ -106,10 +108,18 @@ attached collection.
 
 
 ## Testing out the APIs
-As mentioned, a Postman collection(```work_tracker_postman_collection.json```), already containing viable Auth tokens and
-mock requests with viable data, has been created to allow for easy testing of the different API endpoints.
+As mentioned, a Postman collection(```work_tracker_postman_collection.json```), already containing mock requests with
+viable data, has been created to allow for easy testing of the different API endpoints.
 
 Additionally, more thorough documentation on how the endpoints function can be found there.
 
 Information on importing the attached collection can be found
 [here](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman).
+
+**NOTE:**
+
+> In that the docker container is running on a new system, new AUTH tokens will have to be created and updated on the
+> Postman requests.
+> You can do this by using the ```/api/user/auth-token``` endpoint with the desired User credentials.
+>
+> Note that all User passwords are set as ```BakerSoft24``` for ease of use.
