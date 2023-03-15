@@ -123,3 +123,15 @@ Information on importing the attached collection can be found
 > You can do this by using the ```/api/user/auth-token``` endpoint with the desired User credentials.
 >
 > Note that all User passwords are set as ```BakerSoft24``` for ease of use.
+
+
+****
+****
+
+## TODOs and Optimizations to address in future:
+- Customise Admin more thoroughly.
+- Create a Hybrid Router for simple registration of Generic Views and ViewSets in regards to the API.
+- Create filtering and add pagination to the APIs.
+- Add more business logic in terms of Billing, Time worked etc. to Company, Project, Task endpoints.
+- Integrate reports to be exported.
+- Contemplate implementing FrontEnd using a JS Framework such as VueJS.
